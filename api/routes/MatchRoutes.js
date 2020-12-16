@@ -1,15 +1,15 @@
 'use strict';
 module.exports = function(app) {
-  var matchesList = require('../controllers/MatchController');
+  var usersList = require('../controllers/UserController');
 
   // todoList Routes
-  app.route('/matches')
-    .get(matchesList.list_all_matches)
-    .post(matchesList.create_a_match);
+  app.route('/users')
+    .get(usersList.list_all_users)
+    .post(usersList.create_a_user);
 
 
-  app.route('/matches/:matchId')
-    .get(matchesList.read_a_match)
-    .put(matchesList.update_a_match)
-    .delete(matchesList.delete_a_match);
+  app.route('/users/:userId')
+    .get(usersList.read_a_user)
+    .put(usersList.update_a_user)
+    .delete(usersList.delete_a_user);
 };

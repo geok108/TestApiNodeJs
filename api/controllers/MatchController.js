@@ -31,7 +31,7 @@ exports.read_a_match = function(req, res) {
 
 
 exports.update_a_match = function(req, res) {
-  Task.findOneAndUpdate({_id: req.params.matchId}, req.body, {new: true}, function(err, match) {
+  Match.findOneAndUpdate({_id: req.params.matchId}, req.body, {new: true}, function(err, match) {
     if (err)
       res.send(err);
     res.json(match);
